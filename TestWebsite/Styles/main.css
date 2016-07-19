@@ -1,0 +1,49 @@
+/*Body Styling*/
+body {
+  background-color: #b3b3b3;
+  margin: 0px;
+  padding: 0px;
+}
+.wrapper {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+/*Nav Styling*/
+.navBar {
+  background-color: #404040;
+  color: #ffffff;
+  display: block;
+  float: none;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+.navItem {
+  display: inline-block;
+  margin:10px;
+}
+.navItem a, .navItem a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+.navItem a:hover, .navItem a:active {
+  color: #808080;
+}
+/*Main Content Styling*/
+.content {
+  height: auto;
+  width: 100%;
+}
+/*Footer Styling*/
+.footer {
+  background-color: #404040;
+  color: #ffffff;
+  display: block;
+  height: 40px;
+  margin-top: auto;
+  margin-bottom: 0px;
+  padding:10px;
+  width:100%;
+}
