@@ -14,7 +14,7 @@
 pyvenv.cfg
 .venv
 pip-selfcheck.json
-ENV/
+/**/ENV/*
 
 
 ### macOS ###
