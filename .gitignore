@@ -1,6 +1,9 @@
 
 # Created by https://www.gitignore.io/api/virtualenv,macos,windows,wordpress
 
+### Databases ###
+.sqlite3
+
 ### VirtualEnv ###
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
