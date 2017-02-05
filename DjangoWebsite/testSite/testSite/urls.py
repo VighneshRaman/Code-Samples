@@ -15,8 +15,21 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework import routers
+from pokemon.views import PokemonViewSet, TypeViewSet, MoveViewSet, NatureViewSet, AbilityViewSet
+
+admin.autodiscover()
+
+# Routers
+router = routers.DefaultRouter()
+router.register(r'pkmn/pokemon', PokemonViewSet)
+router.register(r'pkmn/types', TypeViewSet)
+router.register(r'pkmn/moves', MoveViewSet)
+router.register(r'pkmn/natures', NatureViewSet)
+router.register(r'pkmn/abilities', AbilityViewSet)
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
     url(r'^', include('home.urls')),
+    url(r'^admin/', admin.site.urls),
+    url(r'^api/', include(router.urls)),
 ]
