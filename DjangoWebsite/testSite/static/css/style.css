@@ -1,0 +1,84 @@
+/*Basic Styling*/
+body {
+	background-color: #504949;
+	color: #ffffff;
+	margin: 0px;
+	padding: 0px;
+}
+
+/*Navbar Styling*/
+.nav {
+	background-color: #333333;
+	list-style-type: none;
+	margin-top: 0px;
+	padding: 0px;
+	width: 100%;
+}
+.nav li {
+	display: inline-block;
+	padding: 10px;
+}
+.nav li a {
+	color: #ffffff;
+	padding: inherit;
+	text-decoration: none;
+}
+.nav li a:hover, .nav li:hover {
+	background-color: #8c8c8c;
+	color: #003366;
+}
+
+/*Content Styling*/
+.content {
+	margin: 0px;
+	padding: 10px;
+}
+.row {
+	width:100%;
+}
+.span {
+	display: inline-block;
+	margin: 10px;
+	padding: 5px;
+	vertical-align: center;
+}
+.thumbnails {
+	list-style-type: none;
+}
+.session {
+	background-color: #282525;
+	border: solid 2px #1a1a1a;
+	max-width: 40%;
+	min-width: 500px;
+	padding: 10px;
+}
+.entries {
+	list-style-type: none;
+}
+
+/*Content Button/Link Styles*/
+.content a {
+	color: #ffffff;
+	padding: inherit;
+	text-decoration: none;
+}
+.content a:hover {
+	color: #003366;
+}
+.content button, .content button a {
+	color: #003366;
+	padding: inherit;
+	text-decoration: none;
+}
+/*Table Styling*/
+.chartRow {
+	padding: 2px;
+}
+.chartRow tr {
+	border: solid 2px black;
+	padding: 2px;
+}
+.chartRow tr td {
+	padding: 4px;
+	text-align: center;
+}
