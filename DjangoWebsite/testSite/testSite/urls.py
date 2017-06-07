@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
 # from home.views import UserViewSet, GroupViewSet
-from pokemon.views import PokemonViewSet, TypeViewSet, MoveViewSet, NatureViewSet, AbilityViewSet
+# from pokemon.views import PokemonViewSet, TypeViewSet, MoveViewSet, NatureViewSet, AbilityViewSet
 
 admin.autodiscover()
 
@@ -25,11 +25,11 @@ admin.autodiscover()
 router = routers.DefaultRouter()
 # router.register(r'users', UserViewSet)
 # router.register(r'groups', GroupViewSet)
-router.register(r'pkmn/pokemon', PokemonViewSet)
-router.register(r'pkmn/types', TypeViewSet)
-router.register(r'pkmn/moves', MoveViewSet)
-router.register(r'pkmn/natures', NatureViewSet)
-router.register(r'pkmn/abilities', AbilityViewSet)
+# router.register(r'pkmn/pokemon', PokemonViewSet)
+# router.register(r'pkmn/types', TypeViewSet)
+# router.register(r'pkmn/moves', MoveViewSet)
+# router.register(r'pkmn/natures', NatureViewSet)
+# router.register(r'pkmn/abilities', AbilityViewSet)
 
 urlpatterns = [
     url(r'^', include('home.urls')),
