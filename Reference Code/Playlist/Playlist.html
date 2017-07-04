@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		/*Style for Header*/
+		.header {
+			text-align:center;
+			background: #cedbe9; /* Old browsers */
+			background: -moz-linear-gradient(top,  #cedbe9 0%, #aac5de 17%, #6199c7 50%, #3a84c3 51%, #419ad6 59%, #4bb8f0 71%, #3a8bc2 84%, #26558b 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cedbe9), color-stop(17%,#aac5de), color-stop(50%,#6199c7), color-stop(51%,#3a84c3), color-stop(59%,#419ad6), color-stop(71%,#4bb8f0), color-stop(84%,#3a8bc2), color-stop(100%,#26558b)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', endColorstr='#26558b',GradientType=0 ); /* IE6-9 */
+		}
+		/*Style for Video*/
+		#videoplayer {
+			display:table;
+			line-height:0;
+			font-size:0;
+			background:white;
+		}
+		#videoplayer video, #videoplayer figcaption {
+			display:table-cell;
+			vertical-align:top;
+		}
+		#videoplayer video {
+			border:solid 4px black;
+			border-radius:10px;
+			background-color:black;
+			float:left;
+			width:600px;
+			height:400px;
+		}
+		/*Styling for Thumbnails*/
+		#videoplayer figcaption {
+			width:200px;
+			height:600px;
+			float:right;
+			margin-left:10px;
+			overflow:auto; /*Any Thumbnails beyond max height will trigger scrollbar*/
+		}
+		#videoplayer figcaption a {
+			display:block;
+			background-color:black; /*Default in the absence of image*/
+			border-bottom: solid 1px white; /*Allow Thumnails to standout*/
+			width:185px;
+			height:200px;
+			opacity:.5;
+			transition:1s opacity;
+		}
+		#videoplayer figcaption  a img, figure video {
+			width:100%;
+			height:100%;
+		}
+		#videoplayer figcaption a:hover {opacity:1;}
+		@media (max-width:700px;) {
+			#videoplayer video, #videoplayer figcaption {display:table-row;}
+			#videoplayer figcaption a {
+				display:inline-block;
+				width:33.33%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="header"><h1>Simple Video with Scrolling Playlist</h1></div> <!--Simple Header-->
+	<figure id="videoplayer">
+		<video controls poster="Gorilla.jpg">
+			<!-- Fill in the information of the default video file -->
+			<source src="videoname.mp4" type="video/mp4">
+			<source src="videoname.webm" type="video/webm">
+		</video>
+		<figcaption>
+			<!-- Create entries after thge following template for each video -->
+			<a href="videoname.mp4" id="thumbnail"><img src="thumbnail.jpg"></a>
+		</figcaption>
+	</figure>
+	<script>
+	//Handler Function:
+		function handler(e) {
+			e.preventDefault(); //Prevent Clicking link from taking user to referenced mp4 file.
+			//Get Link's href attribute and remove the ".mp4" extension.
+			videotarget = this.getAttribute("href");
+			filename = videotarget.substr(0, videotarget.lastIndexOf('.')) || videotarget;
+			//Change Video's Poster
+			poster = this.getAttribute("id");
+			posterval = poster + ".jpg"
+			video = document.querySelector("#videoplayer video");
+			video.setAttribute("poster", posterval);
+			//Modifies video's source(s) to new values.
+			source = document.querySelectorAll("#videoplayer video source");
+			source[0].src = filename + ".mp4";
+			source[1].src = filename + ".webm";
+			//Loads new video.
+			video.load();
+		}
+	//Make sure all video links respond in the same way
+		var videoplayer = document.getElementById("videoplayer");
+		var links = videoplayer.getElementsByTagName('a');
+		//Loop through links and apply handler to each one.
+		for (var i=0; i<links.length; i++) {
+			links[i].onclick = handler;
+		}
+	</script>
+</body>
+</html>

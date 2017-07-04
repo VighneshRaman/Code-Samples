@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	/*Styling for Answer Key*/
+		.header {
+			width:98%;
+			background-color:#dddada;
+			border:3px solid gray;
+			color:000000;
+			padding:3px;
+			font-size:20px;
+			text-align:center;
+		}
+		a {color:#0254EB;}
+		a:visited {color:#0254EB}
+		a.morelink {
+			text-decoration:none;
+			outline:none;
+		}
+		.morecontent span {display:none;}
+		.comment {
+			width:98%;
+			background-color:#f0f0f0;
+			margin:10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="header"><strong>Question 1</strong></div>
+	<div class="comment more">
+		<strong>Explanation:</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Vestibulum laoreet, nunc eget laoreet sagittis,
+		quam ligula sodales orci, congue imperdiet eros tortor ac lectus.
+		Duis eget nisl orci. Aliquam mattis purus non mauris
+		blandit id luctus felis convallis.
+		Integer varius egestas vestibulum.
+		Nullam a dolor arcu, ac tempor elit. Donec.
+		<p>See Chart:</p>
+		<img src="http://apollo-na-uploads.s3.amazonaws.com/1421911606908/Chart.jpg" height="600" width="600">
+	</div>
+	<div class="header"><strong>Question 2</strong></div>
+	<div class="comment more">
+		<strong>Explanation:</strong><br>Duis nisl nibh, egestas at fermentum at, viverra et purus.
+		Maecenas lobortis odio id sapien facilisis elementum.
+		Curabitur et magna justo, et gravida augue.
+		Sed tristique pellentesque arcu quis tempor.
+	</div>
+	<div class="header"><strong>Question 3</strong></div>
+	<div class="comment more">
+		<strong>Explanation:</strong><br>consectetur adipiscing elit. Proin blandit nunc sed sem dictum id feugiat quam blandit.
+		Donec nec sem sed arcu interdum commodo ac ac diam. Donec consequat semper rutrum.
+		Vestibulum et mauris elit. Vestibulum mauris lacus, ultricies.
+	</div>
+	<div class="header"><strong>Question 4</strong></div>
+	<div class="comment more">
+		<strong>Explanation:</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Vestibulum laoreet, nunc eget laoreet sagittis,
+		quam ligula sodales orci, congue imperdiet eros tortor ac lectus.
+		Duis eget nisl orci. Aliquam mattis purus non mauris
+		blandit id luctus felis convallis.
+		Integer varius egestas vestibulum.
+		Nullam a dolor arcu, ac tempor elit. Donec.
+	</div>
+	<div class="header"><strong>Question 5</strong></div>
+	<div class="comment more">
+		<strong>Explanation:</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Vestibulum laoreet, nunc eget laoreet sagittis,
+		quam ligula sodales orci, congue imperdiet eros tortor ac lectus.
+		Duis eget nisl orci. Aliquam mattis purus non mauris
+		blandit id luctus felis convallis.
+		Integer varius egestas vestibulum.
+		Nullam a dolor arcu, ac tempor elit. Donec.
+	</div>
+	<!--Scripts for Answer Key-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				var showChar = 100;
+				var ellipsestext = "...";
+				var moretext = "more";
+				var lesstext = "less";
+				$('.more').each(function() {
+					var content = $(this).html();
+					if(content.length > showChar) {
+						var c = content.substr(0, showChar);
+						var h = content.substr(showChar-1, content.length - showChar);
+						var html = c + '<span class="moreellipses">' + ellipsestext+ ' </span><span class="morecontent"><span>' + h + '</span>  <a href="" class="morelink">' + moretext + '</a></span>';
+						$(this).html(html);
+					}
+				});
+				$(".morelink").click(function(){
+					if($(this).hasClass("less")) {
+						$(this).removeClass("less");
+						$(this).html(moretext);
+					} else {
+						$(this).addClass("less");
+						$(this).html(lesstext);
+					}
+					$(this).parent().prev().toggle();
+					$(this).prev().toggle();
+					return false;
+				});
+			});
+		</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+These are small webpages that I created when attempting other projects. The files are mainly here as a reference.

@@ -1,0 +1,56 @@
+/*Styling for Quiz*/
+	#quizbody {
+		margin-left:50px;
+		float:left;
+		margin-bottom:10px;
+		width:100%;
+	}
+	answers li {list-style:upper-alpha; }
+	label {
+		margin-left:0.5em;
+		cursor:pointer;
+	}
+/*Styling for Buttons*/
+	.button {
+		background:#dddada;
+		color:000000;
+		padding:3px;
+		text-align:center;
+		width:200px;
+		cursor:pointer;
+		border:1px solid gray;
+	}
+	.button:hover {
+		background:#3d91b8;
+		color:#ffffff;
+		padding:3px;
+		text-align:center;
+		width:200px;
+		cursor:pointer;
+		border:1px solid gray;
+	}
+/*Unseen Elements*/
+	#categorylist {
+		margin-top:6px;
+		margin-left:50px;
+		display:none;
+		float:left;
+	}
+	#tally {
+		margin-top:6px;
+		margin-left:50px;
+		display:none;
+		float:left;	
+	}
+	/*Answer Key*/
+		#AnswerKey {
+			float:right;
+			margin-right:120px;
+			margin-top:6px;
+		}
+		#key {display:block;}
+		#category1, #category2, #category3, #category4 {display:none;}
+		#closing {
+			display:none;
+			font-style:italic;
+		}
